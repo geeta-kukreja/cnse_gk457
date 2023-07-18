@@ -1,5 +1,6 @@
 ## ToDo App
 
+**Every TODO task is completed as instructed (Extra credit for changeItemstatus as well)**
 This is the class assignment for the ToDo list CLI assignment.
 **READ THIS CAREFULLY AS THESE ARE THE DIRECTIONS**
 
