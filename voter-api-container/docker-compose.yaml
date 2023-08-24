@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  redis:
+    container_name: voter-api-redis
+    image: 'redis/redis-stack:latest'
+    ports:
+      - '8001:8001'
+      - '6379:6379'
+  voter-api-starter:
+    container_name: gk457-voter-api
+    depends_on:
+      - redis
+    image: geetakukreja/voter-api-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '1080:1080'
