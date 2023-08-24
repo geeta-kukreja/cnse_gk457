@@ -30,7 +30,7 @@ Run the docker container:
 ```bash
 docker compose up
 
-
+```
 Voter API for:
 GET /voters - Get all voter resources including all voter history for each voter 
 GET&POST /voters/:id - Get a single voter resource with voterID=:id including their entire voting history.  POST version adds one to the "database" -> Done
