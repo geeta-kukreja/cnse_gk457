@@ -43,6 +43,3 @@ VoterID = :id.  POST version adds one to the "database" -> Done
 GET /voters/health - Returns a "health" record indicating that the voter API is functioning properly and some metadata about the API.  
 Note the payload can be hard coded 
 
-```
-------------------------
-```
