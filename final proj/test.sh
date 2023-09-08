@@ -10,8 +10,8 @@ echo "Testing Voter API Scenarios..."
 
 # Scenario 1: POST request to add voter
 echo "Scenario 1: Add voters"
-curl -d '{ "id":1, "firstName": "Geeta", "lastName": "Kukreja" }' -H "Content-Type: application/json" -X POST $voter_api_url/voters
-curl -d '{ "id":0,"FirstName":"John","LastName":"Doe","VoteHistory":[]}' -H "Content-Type: application/json" -X POST $voter_api_url/voters
+curl -d '{ "id":1, "firstName": "Geeta", "lastName": "Kukreja", "voteHistory":[] }' -H "Content-Type: application/json" -X POST $voter_api_url/voters
+curl -d '{ "id":2, "firstName": "John", "lastName":"Doe", "voteHistory":[] }' -H "Content-Type: application/json" -X POST $voter_api_url/voters
 
 # Scenario 3: GET request to list all voters
 echo "Scenario 3: List all voters"
@@ -56,9 +56,9 @@ echo "Testing Votes API Scenarios..."
 # Scenario 11: PUT request to modify an item by ID (replace ID)
 echo "Scenario 11: Add vote in votes list "
 curl -d '{ "voteId": 1, voterId": 1, "pollId": 1,  "voteValue": 1 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
-curl -d '{ "voteId": 2, "voterId": 2, "pollId": 1, "voteValue": 2 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
+# curl -d '{ "voteId": 2, "voterId": 1, "pollId": 1, "voteValue": 2 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
 curl -d '{ "voteId": 3, "voterId": 1, "pollId": 2, "voteValue": 2 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
-curl -d '{ "voteId": 4, "voterId": 2, "pollId": 2, "voteValue": 3 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
+# curl -d '{ "voteId": 4, "voterId": 2, "pollId": 2, "voteValue": 3 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
 
 # Scenario 12: Get all votes.
 echo "Scenario 12: Retrieve all votes"
