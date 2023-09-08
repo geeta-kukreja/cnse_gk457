@@ -46,7 +46,7 @@ func main() {
 
 	r.GET("/polls", apiHandler.ListAllPolls)
 	r.POST("/polls", apiHandler.AddPoll)
-	r.POST("/polls/:pollId/polls/:pollOptionID", apiHandler.AddpollOption)
+	r.POST("/polls/:pollId/options/:pollOptionID", apiHandler.AddpollOption)
 
 	r.GET("/polls/:pollId", apiHandler.GetPollById)
 	r.GET("/polls/:pollId/options", apiHandler.GetAllPollOptions)

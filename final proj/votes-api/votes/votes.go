@@ -114,7 +114,7 @@ func (vc *VoteCache) getItemFromRedis(key string, item *Vote) error {
 }
 func (v *VoteCache) AddVote(vote Vote) error {
 	if _, err := v.GetItem(vote.VoteID); err == nil {
-		return errors.New("poll already exists")
+		return errors.New("vote already exists")
 	}
 
 	// v.polls[poll.pollID] = poll

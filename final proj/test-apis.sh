@@ -31,11 +31,11 @@ curl -d '{ "pollId": 2, "title": "Favourite City", "question": "Your favourite s
 
 # Scenario 6: POST options to poll
 echo "Scenario 6: Add options to poll"
-curl -d '{ "pollOptionID":1, "pollOptionValue": "Indian" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/1/options/1
-curl -d '{ "pollOptionID":2,"pollOptionValue": "Chinese" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/1/options/2
-curl -d '{ "pollOptionID":1, "pollOptionValue": "Paris" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/2/options/1
-curl -d '{ "pollOptionID":2, "pollOptionValue": "New York" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/2/options/2
-curl -d '{ "pollOptionID":3, "pollOptionValue": "Delhi" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/2/options/3
+curl -d '{ "pollId": 1, "pollOptionID":1, "pollOptionValue": "Indian" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/1/options/1
+curl -d '{ "pollId": 1, "pollOptionID":2,"pollOptionValue": "Chinese" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/1/options/2
+curl -d '{ "pollId": 2, "pollOptionID":1, "pollOptionValue": "Paris" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/2/options/1
+curl -d '{ "pollId": 2, "pollOptionID":2, "pollOptionValue": "New York" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/2/options/2
+curl -d '{ "pollId": 2, "pollOptionID":3, "pollOptionValue": "Delhi" }' -H "Content-Type: application/json" -X POST $poll_api_url/polls/2/options/3
 
 # Scenario 8: Get poll
 echo "Scenario 8: Retrieve poll by id"
@@ -54,11 +54,11 @@ curl $headers -X GET $poll_api_url/polls/1/options
 echo "Testing Votes API Scenarios..."
 
 # Scenario 11: PUT request to modify an item by ID (replace ID)
-echo "Scenario 11: Add vote in votes list and update voter history in voter"
-curl -d '{ "voteId": 1, voterId": 1, "pollId": 1, "voteValue": 1 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes/1
-curl -d '{ "voteId": 2, "voterId": 2, "pollId": 1, "voteValue": 1 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes/2
-curl -d '{ "voteId": 3, "voterId": 1, "pollId": 2, "voteValue": 2 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes/3
-curl -d '{ "voteId": 4, "voterId": 2, "pollId": 2, "voteValue": 3 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes/4
+echo "Scenario 11: Add vote in votes list "
+curl -d '{ "voteId": 1, voterId": 1, "pollId": 1,  "voteValue": 1 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
+curl -d '{ "voteId": 2, "voterId": 2, "pollId": 1, "voteValue": 2 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
+curl -d '{ "voteId": 3, "voterId": 1, "pollId": 2, "voteValue": 2 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
+curl -d '{ "voteId": 4, "voterId": 2, "pollId": 2, "voteValue": 3 }' -H "Content-Type: application/json" -X POST $votes_api_url/votes
 
 # Scenario 12: Get all votes.
 echo "Scenario 12: Retrieve all votes"
