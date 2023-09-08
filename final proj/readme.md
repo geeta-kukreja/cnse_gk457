@@ -15,3 +15,17 @@ Note the payload can be hard coded
 ```
 ------------------------
 ```
+
+### Build and Run Using Single Docker Command:
+
+Build and run the docker image:
+
+```bash
+docker compose up --build
+```
+
+Run the sh file for testing
+```bash
+chmod u+x test.sh 
+./test.sh 
+```
