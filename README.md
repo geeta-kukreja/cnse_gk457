@@ -26,7 +26,7 @@ Follow these steps to run the APIs:
 1. Clone the project repository to your local machine and navigate to `voting-application` directory:
 
    ```bash
-   git clone https://github.com/MarkNisarg/CS-T680-CNSE.git
+   git clone https://github.com/geeta-kukreja/cnse_gk457.git
    cd voting-application
    ```
 
