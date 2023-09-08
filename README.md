@@ -72,12 +72,12 @@ Follow these steps to test the APIs using the provided script:
 
 1. Make the script executable:
   ```bash
-   chmod +x test-apis.sh
+   chmod +x test.sh
    ```
 
 2. Run the script:
   ```bash
-   ./test-apis.sh
+   ./test.sh
    ```
 
 The script will execute different API requests and display the results for each scenario.
