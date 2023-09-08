@@ -1,6 +1,6 @@
 # cnse_gk457
 Repository for CNSE Class - CLI projects
-# 1. Voting API Project
+# 1. Voting API Project (final project)
 
 The Voting API Project is a set of three interconnected APIs for managing and recording votes in polls. This README provides an overview of the project, how to run the APIs, and how to test them using a provided shell script.
 
@@ -81,3 +81,31 @@ Follow these steps to test the APIs using the provided script:
    ```
 
 The script will execute different API requests and display the results for each scenario.
+
+
+##  2. ToDo App
+
+
+This is the class assignment for the ToDo list CLI assignment to implement a go language CLI tool to manage a list of todo items..
+
+This application is driven by a simple text file based database.  
+
+
+```
+todo git:(main) ✗ ./todo -h
+Usage of ./todo:
+  -a string
+        Add an item to the database
+  -d int
+        Delete an item from the database
+  -db string
+        Name of the database file (default "./data/todo.json")
+  -l    List all the items in the database
+  -q int
+        Query an item in the database
+  -s    Change item 'done' status to true or false
+  -u string
+        Update an item in the database
+  ```
+
+
