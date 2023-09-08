@@ -1,0 +1,50 @@
+version: '3.9'
+services:
+  redis:
+    container_name: redis
+    image: 'redis/redis-stack:latest'
+    ports:
+      - '8001:8001'
+      - '6379:6379'
+
+  voter-api:
+    container_name: voter-api
+    depends_on:
+      - redis
+    image: gk457/voter-api-container
+    build:
+      context: ./voter-api-container
+      dockerfile: Dockerfile
+    ports:
+      - '1081:1081'
+    environment:
+      - REDIS_URL=redis:6379
+
+  poll-api:
+    container_name: poll-api
+    depends_on:
+      - redis
+    image: gk457/poll-api
+    build:
+      context: ./poll-api
+      dockerfile: Dockerfile
+    ports:
+      - '1080:1080'
+    environment:
+      - REDIS_URL=redis:6379
+
+  votes-api:
+    container_name: votes-api
+    depends_on:
+      - redis
+    image: gk457/votes-api
+    build:
+      context: ./votes-api
+      dockerfile: Dockerfile
+    ports:
+      - '1082:1082'
+    environment:
+      - VOTESAPI_CACHE_URL=redis:6379
+      - VOTER_API_URL=http://voter-api:1080
+      - POLL_API_URL=http://poll-api:1081
+
